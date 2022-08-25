@@ -6,6 +6,8 @@ public class WayPoint : MonoBehaviour
 {
     [SerializeField] bool canPlace;
     [SerializeField] GameObject towerPrefab;
+    public bool CanPlace { get { return canPlace; } }
+    
     private void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0))
@@ -13,7 +15,7 @@ public class WayPoint : MonoBehaviour
             Debug.Log(gameObject.name);
             if (canPlace)
             {
-                Instantiate(towerPrefab, gameObject.transform);
+                Instantiate(towerPrefab, transform.position, Quaternion.identity);
                 canPlace = !canPlace;
             }
             

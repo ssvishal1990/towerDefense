@@ -22,7 +22,7 @@ public class EnemyMover : MonoBehaviour
 
         foreach (WayPoint wayPoint in path)
         {
-            Debug.Log(wayPoint.name);
+            //Debug.Log(wayPoint.name);
             Vector3 startPosition = transform.position;
             Vector3 endPosition = wayPoint.gameObject.transform.position;
             float travelPercent = 0f;

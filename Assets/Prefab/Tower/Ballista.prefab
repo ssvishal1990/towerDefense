@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2755807781362928645}
   m_Layer: 0
   m_Name: BoltFiringSystem
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3789,7 +3789,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -4822,9 +4822,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3049131714819384361}
   - component: {fileID: -8167507959602291772}
+  - component: {fileID: 1355796123}
   m_Layer: 0
   m_Name: Ballista
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4861,6 +4862,19 @@ MonoBehaviour:
   weapon: {fileID: 3144582324300694500}
   target: {fileID: 5672325927823913723, guid: b940df629b09f434dbb9fd487257db6c, type: 3}
   enemyGameObjectPrefabs: []
+--- !u!114 &1355796123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219458064393657486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a440bd9d9497f64a9285b0e401b9f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitPoints: 5
 --- !u!1 &6131056645070147807
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,11 @@ public class TargetLocator : MonoBehaviour
 
     private void Start()
     {
-        target = FindObjectOfType<EnemyMover>().transform;
+        if (FindObjectOfType<EnemyMover>() != null)
+        {
+            target = FindObjectOfType<EnemyMover>().transform;
+        }
+        
         //if (target.gameObject.GetComponent<WayPoint>() != null)
         //{
         //   targetGameObject = GetComponent<GameObject>();
@@ -25,6 +29,10 @@ public class TargetLocator : MonoBehaviour
 
     private void AimWeapon()
     {
+        if (target == null)
+        {
+            return;
+        }
         weapon.LookAt(target);
     }
 }
