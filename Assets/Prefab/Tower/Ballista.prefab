@@ -4861,7 +4861,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 3144582324300694500}
   target: {fileID: 5672325927823913723, guid: b940df629b09f434dbb9fd487257db6c, type: 3}
+  BulletFiringParticleSysmtem: {fileID: 9220010694201762552}
   enemyGameObjectPrefabs: []
+  towerRange: 15
 --- !u!114 &1355796123
 MonoBehaviour:
   m_ObjectHideFlags: 0

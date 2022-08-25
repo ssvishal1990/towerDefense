@@ -7,7 +7,10 @@ public class TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform weapon;
     [SerializeField] Transform target;
+    [SerializeField] ParticleSystem BulletFiringParticleSysmtem;
     [SerializeField] List<GameObject> enemyGameObjectPrefabs;
+    [SerializeField] float towerRange = 15f;
+    float maxDistance = Mathf.Infinity;
 
     private void Start()
     {
@@ -27,9 +30,6 @@ public class TargetLocator : MonoBehaviour
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
         Transform closestEnemy = null;
-        float maxDistance = Mathf.Infinity;
-
-
         foreach (Enemy enemy in enemies)
         {
             float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
@@ -39,9 +39,7 @@ public class TargetLocator : MonoBehaviour
                 closestEnemy = enemy.transform;
                 maxDistance = targetDistance;
             }
-        }
-
-        target = closestEnemy;
+        }        
     }
 
     private void AimWeapon()
@@ -51,5 +49,18 @@ public class TargetLocator : MonoBehaviour
             return;
         }
         weapon.LookAt(target);
+        if (maxDistance < towerRange)
+        {
+            Attack(true);
+        }else
+        {
+            Attack(false);
+        }
+    }
+
+    void Attack(bool canAttack)
+    {
+        var particleSystemEmissionModule = BulletFiringParticleSysmtem.emission;
+        particleSystemEmissionModule.enabled = canAttack;
     }
 }
