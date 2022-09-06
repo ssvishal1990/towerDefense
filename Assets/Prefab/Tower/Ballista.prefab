@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3049131714819384361}
   - component: {fileID: -8167507959602291772}
-  - component: {fileID: 1355796123}
+  - component: {fileID: 131292727320036151}
   m_Layer: 0
   m_Name: Ballista
   m_TagString: Tower
@@ -4864,7 +4864,7 @@ MonoBehaviour:
   BulletFiringParticleSysmtem: {fileID: 9220010694201762552}
   enemyGameObjectPrefabs: []
   towerRange: 15
---- !u!114 &1355796123
+--- !u!114 &131292727320036151
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4873,10 +4873,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3219458064393657486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a440bd9d9497f64a9285b0e401b9f0e, type: 3}
+  m_Script: {fileID: 11500000, guid: aeae9a56ba8ab79479b264166e5bcecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 5
 --- !u!1 &6131056645070147807
 GameObject:
   m_ObjectHideFlags: 0

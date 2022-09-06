@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<WayPoint> path = new List<WayPoint>();
     [SerializeField][Range(0f, 5f)] float speed = 1f;
+    Enemy enemy;
 
     bool finishedJourney = false;
     void OnEnable()
     {
         Debug.Log("Inside Enemy Mover Script");
+        enemy = GetComponent<Enemy>();
         FindPath();
         returnToStart();
         StartCoroutine(FollowPath());
@@ -20,10 +23,14 @@ public class EnemyMover : MonoBehaviour
     void FindPath()
     {
         path.Clear();
-        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Path");
-        foreach (GameObject waypoint in waypoints)
+        GameObject parent = GameObject.FindGameObjectWithTag("Path");
+        foreach (Transform child in parent.transform)
         {
-            path.Add(waypoint.GetComponent<WayPoint>());
+            WayPoint wayPoint = child.GetComponent<WayPoint>();
+            if (wayPoint != null)
+            {
+                path.Add(wayPoint);
+            }
         }
     }
 
@@ -33,6 +40,8 @@ public class EnemyMover : MonoBehaviour
     }
     void Update()
     {
+        //Debug.Log(gameObject.name);
+
         if (finishedJourney)
         {
             finishedJourney = false;
@@ -55,11 +64,15 @@ public class EnemyMover : MonoBehaviour
                 travelPercent += Time.deltaTime * speed;
                 transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
                 yield return new WaitForEndOfFrame();
-            }   
+            }
         }
+        EndOfThePathActions();
+    }
+
+    private void EndOfThePathActions()
+    {
         finishedJourney = true;
-        //returnToStart();
-        //Destroy(gameObject);
+        enemy.stealGold();
         gameObject.SetActive(false);
     }
 }

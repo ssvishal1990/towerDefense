@@ -4,6 +4,10 @@ using UnityEngine;
 using TMPro;
 using System;
 
+// While making the build of the game, need to move this script to 
+// "Editor" folder(if doesn't exists create one)
+
+[RequireComponent(typeof(TextMeshPro))]
 [ExecuteAlways]
 public class CoordinateLabeler : MonoBehaviour
 {
@@ -20,11 +24,6 @@ public class CoordinateLabeler : MonoBehaviour
         wayPoint = GetComponentInParent<WayPoint>();
         GetDisplayCoordinates();
     }
-    void Start()
-    {
-        
-    }
-
     // Had to restart the cycle by starting and stopping play 
     // So that it will update the coordinates in editor view correctly
     void Update()

@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPlace: 1
-  towerPrefab: {fileID: 3219458064393657486, guid: 3e3a363b4adcd6e4d9911ca48783a16a, type: 3}
+  towerPrefab: {fileID: 131292727320036151, guid: 3e3a363b4adcd6e4d9911ca48783a16a, type: 3}
 --- !u!65 &4955929828970756563
 BoxCollider:
   m_ObjectHideFlags: 0

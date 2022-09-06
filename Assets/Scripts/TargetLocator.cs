@@ -10,15 +10,12 @@ public class TargetLocator : MonoBehaviour
     [SerializeField] ParticleSystem BulletFiringParticleSysmtem;
     [SerializeField] List<GameObject> enemyGameObjectPrefabs;
     [SerializeField] float towerRange = 15f;
-    float maxDistance = Mathf.Infinity;
 
-    private void Start()
-    {
-        if (FindObjectOfType<EnemyMover>() != null)
-        {
-            target = FindObjectOfType<Enemy>().transform;
-        }
-    }
+
+
+    //Used to Debug 
+    [SerializeField] List<float> distanceToEnemy;
+
 
     private void Update()
     {
@@ -30,26 +27,29 @@ public class TargetLocator : MonoBehaviour
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
         Transform closestEnemy = null;
+        float maxDistance = Mathf.Infinity;
         foreach (Enemy enemy in enemies)
         {
+            Debug.Log(enemies.Length);
             float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
+            
+            Debug.DrawLine(transform.position, enemy.transform.position);
 
             if (targetDistance < maxDistance)
             {
                 closestEnemy = enemy.transform;
                 maxDistance = targetDistance;
             }
+
+            target = closestEnemy;
         }        
     }
 
     private void AimWeapon()
     {
-        if (target == null)
-        {
-            return;
-        }
+        float targetDistance = Vector3.Distance(transform.position, target.transform.position);
         weapon.LookAt(target);
-        if (maxDistance < towerRange)
+        if (targetDistance < towerRange)
         {
             Attack(true);
         }else
@@ -63,4 +63,6 @@ public class TargetLocator : MonoBehaviour
         var particleSystemEmissionModule = BulletFiringParticleSysmtem.emission;
         particleSystemEmissionModule.enabled = canAttack;
     }
+
+
 }

@@ -92,8 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5672325927823913723}
-  - component: {fileID: 2766133439805024893}
   - component: {fileID: 8101575942878316225}
+  - component: {fileID: 2766133439805024893}
   - component: {fileID: 2713329714842300701}
   - component: {fileID: 427264406622772289}
   m_Layer: 6
@@ -119,6 +119,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8101575942878316225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040643765344069697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.73, y: 3.5, z: 4}
+  m_Center: {x: 0, y: 2.27, z: 0}
 --- !u!114 &2766133439805024893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,19 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   speed: 1
---- !u!65 &8101575942878316225
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040643765344069697}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.73, y: 3.5, z: 4}
-  m_Center: {x: 0, y: 2.27, z: 0}
 --- !u!114 &2713329714842300701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff66e31d74217dc42871d52475c4c97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldReward: 25
+  goldPenalty: 25
