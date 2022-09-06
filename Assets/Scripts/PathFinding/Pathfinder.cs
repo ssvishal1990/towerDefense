@@ -30,13 +30,15 @@ public class Pathfinder : MonoBehaviour
         {
             grid = GridManager.Grid;
         }
-        startNode = new Node(startCoordinates, true);
-        endNode = new Node(endCoordinates, true);
     }
 
     private void Start()
     {
+
+        startNode = GridManager.Grid[startCoordinates];
+        endNode = GridManager.Grid[endCoordinates];
         breadthFirstSearch();
+        buildPath();
     }
 
     private void ExploreNeighbors()
@@ -56,6 +58,7 @@ public class Pathfinder : MonoBehaviour
         {
             if (!reachedDictionary.ContainsKey(neighbor.coordinates) && neighbor.isWalkable)
             {
+                neighbor.connectedTo = currentSearchNode;
                 reachedDictionary.Add(neighbor.coordinates, neighbor);
                 frontier.Enqueue(neighbor);
             }
@@ -78,5 +81,24 @@ public class Pathfinder : MonoBehaviour
                 isRunning = false;
             }
         }
+    }
+
+    List<Node> buildPath()
+    {
+        List<Node> path = new List<Node>();
+        Node currentNode = endNode;
+
+        path.Add(currentNode);
+        currentNode.isPath = true;
+        while (currentNode.connectedTo != null)
+        {
+            currentNode = currentNode.connectedTo;
+            path.Add(currentNode);
+            currentNode.isPath = true;
+        }
+        path.Reverse();
+        return path;
+        
+
     }
 }
