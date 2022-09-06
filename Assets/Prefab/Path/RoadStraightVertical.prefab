@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6021739618169129037, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.0009
+      value: 40.0004
       objectReference: {fileID: 0}
     - target: {fileID: 6021739618169129037, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6021739618169129037, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.000301
+      value: 50.0005
       objectReference: {fileID: 0}
     - target: {fileID: 6021739618169129037, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -37,15 +37,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6021739618169129037, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6021739618169129037, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6021739618169129037, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6021739618169129037, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -61,11 +61,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6909389408967324268, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_text
-      value: 9 ,-3
+      value: 4 ,4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909389408967324268, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.11320752
+      objectReference: {fileID: 0}
+    - target: {fileID: 6909389408967324268, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190109
       objectReference: {fileID: 0}
     - target: {fileID: 7364957848942255008, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}
       propertyPath: m_Name
-      value: RoadStraightVertical
+      value: 4 ,4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12ca2f5acbe2e4348a6da8df83bf5ca5, type: 3}

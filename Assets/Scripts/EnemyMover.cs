@@ -13,7 +13,7 @@ public class EnemyMover : MonoBehaviour
     bool finishedJourney = false;
     void OnEnable()
     {
-        Debug.Log("Inside Enemy Mover Script");
+        //Debug.Log("Inside Enemy Mover Script");
         enemy = GetComponent<Enemy>();
         FindPath();
         returnToStart();

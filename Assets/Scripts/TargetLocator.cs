@@ -30,7 +30,6 @@ public class TargetLocator : MonoBehaviour
         float maxDistance = Mathf.Infinity;
         foreach (Enemy enemy in enemies)
         {
-            Debug.Log(enemies.Length);
             float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
             
             Debug.DrawLine(transform.position, enemy.transform.position);

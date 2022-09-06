@@ -12,7 +12,6 @@ public class WayPoint : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(gameObject.name);
             if (canPlace)
             {
                 bool isPlaced = towerPrefab.createTower(towerPrefab, transform.position);

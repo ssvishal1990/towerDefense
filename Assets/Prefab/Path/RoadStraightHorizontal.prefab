@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451525860271628041, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 120.001205
       objectReference: {fileID: 0}
     - target: {fileID: 451525860271628041, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451525860271628041, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 30.0003
       objectReference: {fileID: 0}
     - target: {fileID: 451525860271628041, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451525860271628041, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 451525860271628041, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 451525860271628041, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 451525860271628041, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -51,9 +51,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 735974775795311912, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
+      propertyPath: m_text
+      value: 12 ,2
+      objectReference: {fileID: 0}
     - target: {fileID: 3738047081145109732, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_Name
-      value: RoadStraightHorizontal
+      value: 12 ,2
       objectReference: {fileID: 0}
     - target: {fileID: 5190977428308359818, guid: c867527179d4fd34c85f80f6ecc3b3c9, type: 3}
       propertyPath: m_LocalRotation.w
