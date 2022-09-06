@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Now Focussing on a graph theory approach
 [RequireComponent(typeof(Enemy))]
 public class EnemyMover : MonoBehaviour
 {
