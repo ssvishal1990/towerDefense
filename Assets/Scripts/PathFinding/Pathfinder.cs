@@ -6,7 +6,9 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     [SerializeField] Vector2Int startCoordinates;
+    public Vector2Int StartCoordinates { get { return startCoordinates; } }
     [SerializeField] Vector2Int endCoordinates;
+    public Vector2Int EndCoordinates { get { return endCoordinates; } }
 
 
     Node startNode;
@@ -25,19 +27,20 @@ public class Pathfinder : MonoBehaviour
 
     private void Awake()
     {
+
         GridManager = FindObjectOfType<GridManager>();
         if (GridManager != null)
         {
             grid = GridManager.Grid;
+            startNode = grid[startCoordinates];
+            endNode = grid[endCoordinates];
+
         }
     }
 
     private void Start()
     {
-
-        startNode = GridManager.Grid[startCoordinates];
-        endNode = GridManager.Grid[endCoordinates];
-        breadthFirstSearch();
+        breadthFirstSearch(startCoordinates);
         buildPath();
     }
 
@@ -65,11 +68,31 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    void breadthFirstSearch()
+    public List<Node> GetNewPath()
     {
+        GridManager.RestNodes();
+        breadthFirstSearch(startCoordinates);
+        return buildPath();
+    }
+
+    public List<Node> GetNewPath(Vector2Int Coordinates)
+    {
+        GridManager.RestNodes();
+        breadthFirstSearch(Coordinates);
+        return buildPath();
+    }
+
+    void breadthFirstSearch(Vector2Int coordinates)
+    {
+        startNode.isWalkable = true;
+        endNode.isWalkable = true;
+
+        frontier.Clear();
+        reachedDictionary.Clear();
+
         bool isRunning = true;
-        frontier.Enqueue(startNode);
-        reachedDictionary.Add(startCoordinates, startNode);
+        frontier.Enqueue(grid[coordinates]);
+        reachedDictionary.Add(coordinates, grid[coordinates]);
 
         while (frontier.Count > 0 && isRunning)
         {
@@ -100,5 +123,28 @@ public class Pathfinder : MonoBehaviour
         return path;
         
 
+    }
+
+    public bool willBlockPath(Vector2Int coordinates)
+    {
+        if (grid.ContainsKey(coordinates))
+        {
+            bool previousState = grid[coordinates].isWalkable;
+            grid[coordinates].isWalkable = false;
+            List<Node> newPath = GetNewPath();
+            grid[coordinates].isWalkable = previousState;
+
+            if (newPath.Count <= 1)
+            {
+                GetNewPath();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void NotifyReceivers()
+    {
+        BroadcastMessage("RecalculatePath", false, SendMessageOptions.DontRequireReceiver);
     }
 }

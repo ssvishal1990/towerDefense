@@ -6,7 +6,7 @@ using UnityEngine;
 public class ObjectPooler : MonoBehaviour
 {
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField][Range(0f, 50f)] WayPoint startPoint;
+    [SerializeField][Range(0f, 50f)] Tile startPoint;
     [SerializeField][Range(0.1f, 2f)] float spawnTimer = 1f;
 
     [SerializeField] int poolSize = 5;

@@ -23,8 +23,9 @@ public class CoordinateLabeler : MonoBehaviour
     private void Awake()
     {
         coordinatesLabel = GetComponent<TextMeshPro>();
-        GetDisplayCoordinates();
         gridManager = FindObjectOfType<GridManager>();
+        GetDisplayCoordinates();
+        
     }
     // Had to restart the cycle by starting and stopping play 
     // So that it will update the coordinates in editor view correctly
@@ -81,8 +82,9 @@ public class CoordinateLabeler : MonoBehaviour
 
     private void GetDisplayCoordinates()
     {
+        if (gridManager == null) return;
         coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.y);
         coordinatesLabel.text = coordinates.x + " ," + coordinates.y;
     }
 }

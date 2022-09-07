@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSize: {x: 13, y: 4}
+  unityGridSize: 10
 --- !u!4 &222243932
 Transform:
   m_ObjectHideFlags: 0
@@ -1063,7 +1064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCoordinates: {x: 0, y: 0}
-  endCoordinates: {x: 13, y: 4}
+  endCoordinates: {x: 3, y: 4}
 --- !u!1001 &616795286
 PrefabInstance:
   m_ObjectHideFlags: 0
